@@ -1,5 +1,8 @@
+using Microsoft.VisualBasic;
+
 class AdressBookMenu
 {
+
     readonly AdressBook _adressbook;
     public AdressBookMenu(AdressBook ab) => _adressbook = ab;
 
@@ -50,9 +53,13 @@ class AdressBookMenu
         Console.WriteLine(contacts.Count() + " KONTAKTER");
         foreach (var contact in contacts)
         {
-            Console.WriteLine(contact.Id + ": " +
-                              contact.FullName + " - " +
-                              contact.PhoneNumber?.Value);
+            for (contact.Id = 1; contact.Id < contact.FullName.Length; contact.Id++)
+            {
+                Console.WriteLine(contact.Id + ": " +
+                                    contact.FullName + " - " +
+                                    contact.PhoneNumber?.Value);
+            }
         }
+
     }
 }
