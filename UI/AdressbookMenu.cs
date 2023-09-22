@@ -51,14 +51,14 @@ class AdressBookMenu
     static void ShowContacts(IEnumerable<Contact> contacts)
     {
         Console.WriteLine(contacts.Count() + " KONTAKTER");
+
+        int Rank = 1;
         foreach (var contact in contacts)
         {
-            for (contact.Id = 1; contact.Id < contact.FullName.Length; contact.Id++)
-            {
-                Console.WriteLine(contact.Id + ": " +
-                                    contact.FullName + " - " +
-                                    contact.PhoneNumber?.Value);
-            }
+            Console.WriteLine(Rank + ": " +
+                                contact.FullName + " - " +
+                                contact.PhoneNumber?.Value);
+            Rank++;
         }
 
     }
