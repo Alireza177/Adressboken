@@ -10,8 +10,7 @@ class AdressBookMenu
     {
         while (true)
         {
-            Console.Clear();
-            Console.WriteLine(" - ADRESSBOKEN -\n\n1. Visa kontakter \n2. Lägg till kontakt\n3. Sök bland kontakter \n4. Avsluta\n");
+            MenuChoice();
 
             int choice = ConsoleUtils.GetIntChar("> ");
 
@@ -46,6 +45,12 @@ class AdressBookMenu
 
             Console.ReadKey();
         }
+    }
+
+    static void MenuChoice()
+    {
+        Console.Clear();
+        Console.WriteLine(" - ADRESSBOKEN -\n\n1. Visa kontakter \n2. Lägg till kontakt\n3. Sök bland kontakter \n4. Avsluta\n");
     }
 
     static void ShowContacts(IEnumerable<Contact> contacts)
